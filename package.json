@@ -1,0 +1,45 @@
+{
+  "name": "dot-wild-remap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean --minify",
+    "release": "bumpp package.json --commit 'Release %s' --push --tag && npm publish --access public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GarrettEHill/dot-wild-remap.git"
+  },
+  "keywords": [
+    "dot-wild",
+    "remap"
+  ],
+  "author": "GarrettEHill",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GarrettEHill/dot-wild-remap/issues"
+  },
+  "homepage": "https://github.com/GarrettEHill/dot-wild-remap#readme",
+  "devDependencies": {
+    "bumpp": "^9.2.0",
+    "tsup": "^7.2.0",
+    "tsx": "^3.12.9",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dot-wild": "^3.0.1"
+  }
+}
